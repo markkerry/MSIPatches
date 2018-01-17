@@ -8,18 +8,6 @@ if ($PSVersionTable.PSEdition -eq 'Core') {
     break
 }
 
-# Check MSI module is installed. https://github.com/heaths/psmsi
-If ((Get-Command -Module MSI) -eq $null ) {
-    Write-Output "The MSI module is not loaded, loading..."
-    try {
-        Install-Package msi -Provider PowerShellGet -Force -Verbose
-    }
-    catch {
-        Write-Warning $_.exception.message
-        break
-    }
-}
-
 # Get Public and private functions
 $Public = @(Get-ChildItem -Path $PSScriptRoot\Public\*.ps1 -ErrorAction SilentlyContinue)
 $Private = @(Get-ChildItem -Path $PSScriptRoot\Private\*.ps1 -ErrorAction SilentlyContinue)
