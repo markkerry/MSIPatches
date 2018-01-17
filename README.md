@@ -29,8 +29,15 @@ Install-Package msi -Provider PowerShellGet
 
 ## Installation
 ``` powershell
+# Install the MSI package (as above)
+Install-Package msi -Provider PowerShellGet
+
+# Download and unzip the MSIPatches module. 
+# Unblock the files. E.g:
+Get-ChildItem C:\MSIPatches\ -Recurse | Unblock-File
+
 # Import the module
-Import-Module C:\MSIPatches\MSIPatches\MSIPatches.psd1
+Import-Module C:\MSIPatches\MSIPatches\MSIPatches.psd1 -Force -Verbose
 ```
 ---
 
