@@ -2,7 +2,7 @@
 *Written by Mark Kerry*
 
 ## About
-This module requires the the [MSI](https://github.com/heaths/psmsi) module by [Heath Stewart](https://github.com/heaths). Install via the following method:  
+This module requires the [MSI](https://github.com/heaths/psmsi) module by [Heath Stewart](https://github.com/heaths). Install via the following method:  
 ``` powershell
 Install-Package msi -Provider PowerShellGet
 ```
