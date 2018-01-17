@@ -2,7 +2,10 @@
 *Written by Mark Kerry*
 
 ## About
-This module requires the the [MSI](https://github.com/heaths/psmsi) module by [Heath Stewart](https://github.com/heaths) which, if currently isn't installed, will attempt to install when importing the MSIPatches module.
+This module requires the the [MSI](https://github.com/heaths/psmsi) module by [Heath Stewart](https://github.com/heaths). Install via the following method:  
+``` powershell
+Install-Package msi -Provider PowerShellGet
+```
 
 **MSIPactches** functions
 	
