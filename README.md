@@ -61,7 +61,7 @@ Get-OrphanedPatches | Move-OrphanedPatches -Destination C:\Backup
 
 
 ``` powershell
-# Pass the [System.IO.FileInfo] objects through the pipeline to Move-OrphanedPatches
+# Pass the [System.IO.FileInfo] objects through the pipeline to Remove-OrphanedPatches
 Get-OrphanedPatches | Remove-OrphanedPatches
 ```
 ![Remove-OrphanedPatches](/Media/Remove-OrphanedPatches_01.png)
