@@ -54,6 +54,11 @@ Get-OrphanedPatches | Move-OrphanedPatches -Destination C:\Backup
 # 'y' to create the directory if it doesn't exist.
 ```
 ![Move-OrphanedPatches](/Media/Move-OrphanedPatches_02.png)
+``` powershell
+# After you move the orphaned patches you can run the Get-Msi-Patches command again and see the results.
+```
+![Move-OrphanedPatches](/Media/Move-OrphanedPatches_03.png)
+
 
 ``` powershell
 # Pass the [System.IO.FileInfo] objects through the pipeline to Move-OrphanedPatches
