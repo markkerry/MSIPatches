@@ -84,7 +84,7 @@ Get-OrphanedPatches | Move-OrphanedPatches -Destination C:\Backup
 ![Restore-OrphanedPatches](/Media/Restore-OrphanedPatches_03.png)
 
 ``` powershell
-# Note: you can pass the [System.IO.FileInfo] objects through the pipeline to Remove-Item to permanenlty
+# Note: you can pass the [System.IO.FileInfo] objects through the pipeline to Remove-Item to permanently
 # delete the msp files. Recommend you pipe to Move-OrphanedPatches instead.
 Get-OrphanedPatches | Remove-Item
 ```
