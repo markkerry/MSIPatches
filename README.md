@@ -57,7 +57,7 @@ Get-Help Get-MsiPatches
 
 ## Examples
 ``` powershell
-# Get-Msi-Patches with Verbose output
+# Get-MsiPatches with Verbose output
 Get-MsiPatches -Verbose 
 ```
 ![Get-MsiPatches](/Media/Get-MsiPatches_01.png)  
@@ -98,6 +98,7 @@ Get-OrphanedPatches | Move-OrphanedPatches -Destination C:\Backup
 ![Restore-OrphanedPatches](/Media/Restore-OrphanedPatches_03.png)
 
 ``` powershell
-# Note: you can pass the [System.IO.FileInfo] objects through the pipeline to Remove-Item to permanenlty delete the msp files. Recommend you pipe to Move-OrphanedPatches instead.
+# Note: you can pass the [System.IO.FileInfo] objects through the pipeline to Remove-Item to permanenlty 
+# delete the msp files. Recommend you pipe to Move-OrphanedPatches instead.
 Get-OrphanedPatches | Remove-Item
 ```
