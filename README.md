@@ -48,6 +48,10 @@ Function        Get-OrphanedPatches                                1.0        MS
 Function        Move-OrphanedPatches                               1.0        MSIPatches
 Function        Remove-OrphanedPatches                             1.0        MSIPatches
 Function        Restore-OrphanedPatches                            1.0        MSIPatches
+
+# Get-Help
+Get-Help about_MSIPatches
+Get-Help Get-MsiPatches
 ```
 ---
 
