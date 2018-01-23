@@ -2,10 +2,9 @@
 *Written by Mark Kerry*
 
 ## About
-This module requires the [MSI](https://github.com/heaths/psmsi) module by [Heath Stewart](https://github.com/heaths). Install via the following method:  
-``` powershell
-Install-Package msi -Provider PowerShellGet
-```
+The "C:\Windows\Installer" can often grow very large in size due to applications such as Microsoft Office being regularly patched. Superseded patches get left behind leaving them in an orphaned state. The MSIPatches module can detect and move the orphaned patches freeing up valuable disk space.  
+This module requires the the [MSI](https://github.com/heaths/psmsi) module by [Heath Stewart](https://github.com/heaths). Installation instructions are in the next section
+
 
 **MSIPactches** functions
 	
@@ -29,7 +28,7 @@ Install-Package msi -Provider PowerShellGet
 
 ## Installation
 ``` powershell
-# Install the MSI package (as above)
+# Install the MSI package
 Install-Package msi -Provider PowerShellGet
 
 # Download and unzip the MSIPatches module. 
@@ -38,6 +37,17 @@ Get-ChildItem C:\MSIPatches\ -Recurse | Unblock-File
 
 # Import the module
 Import-Module C:\MSIPatches\MSIPatches\MSIPatches.psd1 -Force -Verbose
+
+# List the commands in the MSIPatches module
+Get-Command -Module MSIPatches
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Function        Get-MsiPatches                                     1.0        MSIPatches
+Function        Get-OrphanedPatches                                1.0        MSIPatches
+Function        Move-OrphanedPatches                               1.0        MSIPatches
+Function        Remove-OrphanedPatches                             1.0        MSIPatches
+Function        Restore-OrphanedPatches                            1.0        MSIPatches
 ```
 ---
 
@@ -84,7 +94,6 @@ Get-OrphanedPatches | Move-OrphanedPatches -Destination C:\Backup
 ![Restore-OrphanedPatches](/Media/Restore-OrphanedPatches_03.png)
 
 ``` powershell
-# Note: you can pass the [System.IO.FileInfo] objects through the pipeline to Remove-Item to permanently
-# delete the msp files. Recommend you pipe to Move-OrphanedPatches instead.
+# Note: you can pass the [System.IO.FileInfo] objects through the pipeline to Remove-Item to permanenlty delete the msp files. Recommend you pipe to Move-OrphanedPatches instead.
 Get-OrphanedPatches | Remove-Item
 ```
