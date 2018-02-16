@@ -103,8 +103,3 @@ Get-OrphanedPatches | Move-OrphanedPatches -Destination C:\Backup
 # delete the msp files. Recommend you pipe to Move-OrphanedPatches instead.
 Get-OrphanedPatches | Remove-Item
 ```
-
----
-
-## Pester
-![Pester](/Media/Pester.png)
