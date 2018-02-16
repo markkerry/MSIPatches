@@ -29,9 +29,6 @@ else {
             It 'Should not be PowerShell Core' {
                 $PSVersionTable.PSEdition -ne 'Core' | Should Be $true
             }
-            It 'Should be greater than 3 for OneGet' {
-                $host.Version.Major -gt 3 | Should Be $true
-            }
             It 'Install-Module exists' {
                 Get-Command Install-Module | Should Be $true
             }
@@ -58,8 +55,8 @@ Describe '- Dot Sourcing MSIPatches Module' {
         It 'Move-OrphanedPatches exists' {
             Get-Command Move-OrphanedPatches | Should Be $true
         }    
-        It 'Remove-OrphanedPatches exists' {
-            Get-Command Remove-OrphanedPatches | Should Be $true
+        It 'Restore-OrphanedPatches exists' {
+            Get-Command Restore-OrphanedPatches | Should Be $true
         }
     }
 }
