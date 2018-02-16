@@ -1,3 +1,5 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/mh290e295fnap311/branch/master?svg=true)](https://ci.appveyor.com/project/markkerry/msipatches/branch/master)
+
 # MSIPatches
 
 ## About
