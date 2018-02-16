@@ -18,4 +18,4 @@ test_script:
 # Test with PS version 2
   - ps: powershell.exe -version 2.0 -executionpolicy bypass -noprofile -file .\Tests\appveyor.pester.ps1 -Test
 # Finalize pass - collect and upload results
-- ps: . .\Tests\appveyor.pester.ps1 -Finalize
+  - ps: . .\Tests\appveyor.pester.ps1 -Finalize
