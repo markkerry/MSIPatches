@@ -6,7 +6,7 @@
 
 ## About
 The "C:\Windows\Installer" can often grow very large in size due to applications such as Microsoft Office being regularly patched. Superseded patches get left behind leaving them in an orphaned state. The MSIPatches module can detect and move the orphaned patches freeing up valuable disk space.  
-This module requires the the [MSI](https://github.com/heaths/psmsi) module by [Heath Stewart](https://github.com/heaths). Installation instructions are in the next section
+This module requires the [MSI](https://github.com/heaths/psmsi) module by [Heath Stewart](https://github.com/heaths). Installation instructions are in the next section
 
 
 **MSIPactches** functions
