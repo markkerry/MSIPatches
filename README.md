@@ -49,7 +49,6 @@ CommandType     Name                                               Version    So
 Function        Get-MsiPatches                                     1.0        MSIPatches
 Function        Get-OrphanedPatches                                1.0        MSIPatches
 Function        Move-OrphanedPatches                               1.0        MSIPatches
-Function        Remove-OrphanedPatches                             1.0        MSIPatches
 Function        Restore-OrphanedPatches                            1.0        MSIPatches
 
 # Get-Help
