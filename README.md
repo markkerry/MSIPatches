@@ -32,6 +32,14 @@ This module requires the [MSI](https://github.com/heaths/psmsi) module by [Heath
 
 ## Installation
 
+You can now install this module from the PowerShell gallery
+
+``` powershell
+Install-Module MSIPatches
+```
+
+Or you can install it manually
+
 ``` powershell
 # Install the MSI package
 Install-Package msi -Provider PowerShellGet
