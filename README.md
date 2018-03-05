@@ -1,3 +1,8 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/mh290e295fnap311/branch/master?svg=true)](https://ci.appveyor.com/project/markkerry/msipatches/branch/master)
+[![PowerShell Gallery - MSIPatches](https://img.shields.io/badge/PowerShell%20Gallery-MSIPatches-ff69b4.svg)](https://www.powershellgallery.com/packages/MSIPatches/1.0)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/markkerry/MSIPatches/blob/master/LICENSE)
+[![Minimum Supported PowerShell Version](https://img.shields.io/badge/PowerShell-3.0-blue.svg)](https://github.com/markkerry/MSIPatches)
+
 # MSIPatches
 
 ## About
