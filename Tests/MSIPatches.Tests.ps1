@@ -21,9 +21,6 @@ else {
             It 'Should not be PowerShell Core' {
                 $PSVersionTable.PSEdition -ne 'Core' | Should Be $true
             }
-            It 'Should be greater than 3 for OneGet' {
-                $host.Version.Major -gt 3 | Should Be $true
-            }
             It 'Install-Module exists' {
                 Get-Command Install-Module | Should Be $true
             }
