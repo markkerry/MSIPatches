@@ -16,11 +16,9 @@ DETAILED DESCRIPTION
     Office being regularly patched. Superseded patches get left behind leaving them in an orphaned state.
     The MSIPatches module can detect and move the orphaned patches freeing up valuable disk space.
 
-    This module requires the MSI module by Heath Stewart. https://github.com/heaths/psmsi
+    This module depends on the MSI module by Heath Stewart. https://github.com/heaths/psmsi
 
     Install via the following method:
-        Install-Package msi -Provider PowerShellGet
-
-    Import-Module C:\MSIPatches\MSIPatches\MSIPatches.psd1 -Force -Verbose
+        Install-Package MSIPatches
 
     Get-Command -Module MSIPatches

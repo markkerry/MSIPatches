@@ -1,5 +1,4 @@
-#Requires -Modules MSI
-function Get-MsiPatches {
+function Get-MsiPatch {
     <# 
     .SYNOPSIS 
         Scans the "C:\Windows\Installer" directory for all installed and orpaned msp files.
@@ -8,16 +7,16 @@ function Get-MsiPatches {
         Using the "Get-MSIPatchInfo" cmdlet from the "MSI" module we can determine which msp files are currently installed.
         From there we can calculate the amount and size of the orpaned msp files.
     .EXAMPLE 
-        Get-MsiPatches
+        Get-MsiPatch
         
         This will display a PsCustomObject of all msp files and size, which are installed and size, and which are 
         orpaned and their total size.
     .EXAMPLE 
-        Get-MsiPatches -Verbose
+        Get-MsiPatch -Verbose
         
         Same as above only verbose information is displayed for each msp detailing whether they are installed or orphaned.
     .EXAMPLE
-        Get-MsiPatches | FT
+        Get-MsiPatch | FT
 
         Simply changes the format to a table view of the object.
     .NOTES

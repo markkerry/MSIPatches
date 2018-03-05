@@ -3,16 +3,8 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
     break
 }
 
-Try {
-    $a = Get-MSIPatchInfo
-}
-catch {
-    Write-Warning "First you must install the MSI module: 'Install-Module -Provider PowerShellGet'"
-    break
-}
-
 try {
-    Import-Module $PSScriptRoot\..\MSIPatches\MSIPatches.psd1 -Force -Verbose
+    Import-Module $PSScriptRoot\..\MSIPatches.psd1 -Force -Verbose
 }
 catch {
     Write-Output "Failed to import module"
@@ -29,6 +21,9 @@ else {
             It 'Should not be PowerShell Core' {
                 $PSVersionTable.PSEdition -ne 'Core' | Should Be $true
             }
+            It 'Should be greater than 3 for OneGet' {
+                $host.Version.Major -gt 3 | Should Be $true
+            }
             It 'Install-Module exists' {
                 Get-Command Install-Module | Should Be $true
             }
@@ -39,6 +34,7 @@ else {
     }
 }
 
+
 Describe '- Dot Sourcing MSIPatches Module' {
     Context '- MSI module checks' {
         It 'Get-MSIPatchInfo exists' {
@@ -46,21 +42,20 @@ Describe '- Dot Sourcing MSIPatches Module' {
         }
     }
     Context '- MSIPatches functions were loaded' {
-        It 'Get-MsiPatches exists' {
-            Get-Command Get-MsiPatches | Should Be $true
+        It 'Get-MsiPatch exists' {
+            Get-Command Get-MsiPatch | Should Be $true
         }
-        It 'Get-OrphanedPatches exists' {
-            Get-Command Get-OrphanedPatches | Should Be $true
+        It 'Get-OrphanedPatch exists' {
+            Get-Command Get-OrphanedPatch | Should Be $true
         }
-        It 'Move-OrphanedPatches exists' {
-            Get-Command Move-OrphanedPatches | Should Be $true
+        It 'Move-OrphanedPatch exists' {
+            Get-Command Move-OrphanedPatch | Should Be $true
         }    
-        It 'Restore-OrphanedPatches exists' {
-            Get-Command Restore-OrphanedPatches | Should Be $true
+        It 'Restore-OrphanedPatch exists' {
+            Get-Command Restore-OrphanedPatch | Should Be $true
         }
     }
 }
-
 Describe '- Testing content within the functions' {
     Context '- Convert Get-MSIPatchInfo LocalPackage property to string' {
         It 'Should return a String TypeName' {
@@ -69,12 +64,12 @@ Describe '- Testing content within the functions' {
         }
     }
     Context '- Get the function Types' {
-        It 'Get-MsiPatches should return a PsCustomObject TypeName' {
-            Get-MsiPatches | Should BeOfType System.Management.Automation.PSCustomObject
+        It 'Get-MsiPatch should return a PsCustomObject TypeName' {
+            Get-MsiPatch | Should BeOfType System.Management.Automation.PSCustomObject
         }
         It 'Get-OrphanedPatches should BeOfType FileInfo TypeName or BeNullOrEmpty' {
             # Assuming you have dicovered orphaned patches
-            $b = Get-OrphanedPatches
+            $b = Get-OrphanedPatch
             if ($b -ne $null) {  
                 $b | Should BeOfType System.IO.FileInfo
             }
