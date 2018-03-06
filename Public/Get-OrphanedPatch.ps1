@@ -18,9 +18,9 @@ function Get-OrphanedPatch {
         If you want to free up space I recommend moving the orphaned msp files to another location so they can easily be
         restored. Supports the "-Whatif" and "Verbose" paramters.
     .EXAMPLE
-        Get-OrphanedPatch | Remove-OrphanedPatch
+        Get-OrphanedPatch | Remove-Item
 
-        This will permanently delete the orphaned msp files from "C:\Windows\OInstaller". Supports the "-Whatif" and 
+        This will permanently delete the orphaned msp files from "C:\Windows\Installer". Supports the "-Whatif" and 
         "Verbose" paramters.
     .NOTES
         Author: Mark Kerry
